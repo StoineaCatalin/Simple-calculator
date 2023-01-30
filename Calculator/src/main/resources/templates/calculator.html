@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>calculator</title>
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body class="p-3 mb-2 bg-dark text-white">
+
+<h1>Simple:</h1>
+<div class="mx-auto" style="width: 200px;">
+		
+<form action="#" th:action="@{/}" th:object="${operators}" method="POST">
+		<input type="text" th:field="*{a}" /> 
+		<input type="text" th:field="*{b}" />
+		<p>
+        <input type="submit" class="btn btn-outline-light" name="add" value="+"/>
+        <input type="submit" class="btn btn-outline-light" name="subtraction" value="-"/>
+        <input type="submit" class="btn btn-outline-light" name="multiply" value="*"/>
+        <input type="submit" class="btn btn-outline-light" name="divide" value="/"/>
+        <input type="submit" class="btn btn-outline-light" name="clearSimple" value="C"/>
+    </p>    
+    <h1><p th:text="'result: ' + ${result}"/></h1>
+</form>
+</div>
+</body>
+</html>
